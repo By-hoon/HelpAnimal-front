@@ -1,4 +1,4 @@
-<h1 align="center">HelpAnimal-test</h1>
+<h1 align="center">HelpAnimal-front</h1>
 
 > ## 사용 스택
 
