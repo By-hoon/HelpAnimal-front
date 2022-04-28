@@ -1,0 +1,29 @@
+// Config
+@import "./config/_reset.scss";
+@import "./config/_fonts.scss";
+@import "./config/_colors.scss";
+@import "./config/_variables.scss";
+
+// GlobalStyles
+
+body {
+  margin-top: 80px;
+  @media #{$desktop} {
+    width: 1200px;
+    margin: 80px auto 0 auto;
+    border: green 2px solid;
+  }
+}
+
+div {
+  box-sizing: border-box;
+}
+
+span,
+p,
+a,
+textarea {
+  font-family: "Gugi", cursive;
+  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+}
