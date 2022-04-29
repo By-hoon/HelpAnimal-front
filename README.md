@@ -13,6 +13,22 @@
 
 ```bash
 src
+├── components
+│   └── Header.tsx
+├── styles
+│   ├── components
+│   │   └── header.scss
+│   ├── config
+│   │   ├── _colors.scss
+│   │   ├── _font.scss
+│   │   ├── _mixins.scss
+│   │   ├── _reset.scss
+│   │   └── _variables.scss
+│   └── styles.scss
+├── App.tsx
+├── index.tsx
+├── react-app-env.d.ts
+└── Router.tsx
 ```
 
 <br>
