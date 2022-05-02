@@ -1,0 +1,4 @@
+@mixin text-shadow($pixel, $color) {
+  text-shadow: (-$pixel) 0 $color, 0 $pixel $color, $pixel 0 $color,
+    0 (-$pixel) $color;
+}

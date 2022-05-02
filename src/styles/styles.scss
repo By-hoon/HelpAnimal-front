@@ -3,6 +3,10 @@
 @import "./config/_fonts.scss";
 @import "./config/_colors.scss";
 @import "./config/_variables.scss";
+@import "./config/_mixins.scss";
+
+// Components
+@import "./components/header.scss";
 
 // GlobalStyles
 
@@ -23,7 +27,6 @@ span,
 p,
 a,
 textarea {
-  font-family: "Gugi", cursive;
   font-family: "Roboto", sans-serif;
   font-family: "Noto Sans KR", sans-serif;
 }
