@@ -1,7 +1,7 @@
 .card__container {
   display: flex;
   position: relative;
-  margin: 50px;
+  margin: 40px;
   @media #{$phone} {
     margin: 20px;
   }

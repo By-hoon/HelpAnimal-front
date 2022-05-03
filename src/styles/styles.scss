@@ -9,14 +9,17 @@
 @import "./components/header.scss";
 @import "./components/crewCard.scss";
 
+// Routes
+@import "./routes/crew.scss";
+
 // GlobalStyles
 
 body {
   margin-top: 80px;
   @media #{$desktop} {
     width: 1200px;
-    margin: 80px auto 0 auto;
-    border: green 2px solid;
+    margin: 160px auto 0 auto;
+    // border: green 2px solid;
   }
 }
 
@@ -27,7 +30,28 @@ div {
 span,
 p,
 a,
-textarea {
+textarea,
+button {
   font-family: "Roboto", sans-serif;
   font-family: "Noto Sans KR", sans-serif;
+}
+
+// Common
+
+.title__container {
+  position: relative;
+  display: flex;
+  border-bottom: 2px $G-main-brown-darken solid;
+  margin: 20px;
+  padding: 0 0 20px 0;
+}
+
+.title__span {
+  font-size: 50px;
+  font-weight: 500;
+  color: $G-main-brown-darken-more;
+  padding-left: 10px;
+  @media #{$phone} {
+    font-size: 40px;
+  }
 }
