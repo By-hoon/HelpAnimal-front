@@ -1,0 +1,114 @@
+.card__container {
+  display: flex;
+  position: relative;
+  margin: 50px;
+  @media #{$phone} {
+    margin: 20px;
+  }
+  animation: appearance 1.2s ease-out backwards;
+  @keyframes appearance {
+    0% {
+      opacity: 0;
+      transform: translateY(120px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+//-------------앞뒤 반전-----------
+
+.link {
+  perspective: 1000px;
+}
+
+.card__container--forward,
+.card__container--backward {
+  width: 200px;
+  height: 300px;
+  border-radius: 25px;
+  @media #{$phone} {
+    width: 130px;
+    height: 195px;
+  }
+  backface-visibility: hidden;
+  transition: 1s;
+  box-shadow: 5px 7px 12px 0px $G-main-brown-lighten;
+}
+
+.card__container--forward {
+  position: absolute;
+  transform: rotateY(0deg);
+}
+
+@media (hover: hover) {
+  //모바일 호버이벤트 제거 방식
+  .card__container:hover {
+    .card__container--forward {
+      transform: rotateY(-180deg);
+    }
+    .card__container--backward {
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+.card__container .card__container--backward {
+  transform: rotateY(180deg);
+}
+
+//--------------------------------
+
+.logo__container {
+  padding: 15px;
+  @media #{$phone} {
+    padding: 10px;
+  }
+  text-align: center;
+}
+
+.logo__image {
+  width: 90%;
+  border-radius: 50%;
+}
+
+.span--top {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: $G-main-brown-darken-more;
+  margin: 10px 0px 25px 0px;
+  @media #{$phone} {
+    font-size: 18px;
+    margin: 3px 0px 13px 0px;
+  }
+}
+
+.span--bottom {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  color: $G-main-brown-darken;
+  padding: 0px 25px 0px 25px;
+  @media #{$phone} {
+    font-size: 10px;
+  }
+}
+
+.card__container--backward {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  font-size: 14px;
+  @media #{$phone} {
+    padding: 8px;
+    font-size: 10px;
+  }
+  background-color: $G-cloudy;
+  color: $G-white;
+  word-break: break-word;
+}

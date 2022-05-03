@@ -14,9 +14,16 @@
 ```bash
 src
 ├── components
+│   ├── CrewCard.tsx
 │   └── Header.tsx
+├── routes
+│   ├── Crew.tsx
+│   └── Home.tsx
+├── shared
+│   ├── Props.tsx
 ├── styles
 │   ├── components
+│   │   ├── crewCard.scss
 │   │   └── header.scss
 │   ├── config
 │   │   ├── _colors.scss
@@ -25,6 +32,8 @@ src
 │   │   ├── _reset.scss
 │   │   └── _variables.scss
 │   └── styles.scss
+├── test
+│   ├── data.ts
 ├── App.tsx
 ├── index.tsx
 ├── react-app-env.d.ts
