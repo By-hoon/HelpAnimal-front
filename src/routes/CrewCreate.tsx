@@ -1,5 +1,13 @@
+import { CrewCreateForm } from "../components/InputForm";
+import { CrewCreateTitle } from "../components/Title";
+
 const CrewCreate = () => {
-  return <span>CrewCreate</span>;
+  return (
+    <>
+      <CrewCreateTitle />
+      <CrewCreateForm />
+    </>
+  );
 };
 
 export default CrewCreate;
