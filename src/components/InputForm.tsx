@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 
 export const CrewCreateForm = () => {
   const [logoSrc, setLogoSrc] = useState("");
+  const [logoName, setLogoName] = useState("파일 선택");
   const [crewName, setCrewName] = useState("");
   const [introduction, setIntroduction] = useState("");
 
@@ -17,12 +18,13 @@ export const CrewCreateForm = () => {
     alert(`${crewName}크루 생성이 완료되었습니다.`);
   };
 
-  const encodeFileToBase64 = (fileBlob: Blob) => {
+  const encodeFileToBase64 = (fileBlob: Blob, fileName: string) => {
     const reader = new FileReader();
     reader.readAsDataURL(fileBlob);
     return new Promise<void>((resolve) => {
       reader.onload = () => {
         setLogoSrc(reader.result as string);
+        setLogoName(fileName);
         resolve();
       };
     });
@@ -41,14 +43,22 @@ export const CrewCreateForm = () => {
           )}
         </div>
         <div>
+          <label className="logo-file__input" htmlFor="input-file">
+            <div>
+              <span className="file-input__span">{logoName}</span>
+            </div>
+          </label>
           <input
             type="file"
+            id="input-file"
             onChange={(e) => {
               if (e.currentTarget.files !== null) {
-                encodeFileToBase64(e.currentTarget.files[0]);
+                const fileBlob = e.currentTarget.files[0];
+                const fileName = e.currentTarget.files[0].name;
+                encodeFileToBase64(fileBlob, fileName);
               }
             }}
-            className="logo-file__input"
+            className="display-none"
           />
         </div>
         <div>
