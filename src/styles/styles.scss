@@ -8,6 +8,10 @@
 // Components
 @import "./components/header.scss";
 @import "./components/crewCard.scss";
+@import "./components/title.scss";
+
+// Routes
+@import "./routes/crew.scss";
 
 // GlobalStyles
 
@@ -15,8 +19,8 @@ body {
   margin-top: 80px;
   @media #{$desktop} {
     width: 1200px;
-    margin: 80px auto 0 auto;
-    border: green 2px solid;
+    margin: 160px auto 0 auto;
+    // border: green 2px solid;
   }
 }
 
@@ -27,7 +31,10 @@ div {
 span,
 p,
 a,
-textarea {
+textarea,
+button {
   font-family: "Roboto", sans-serif;
   font-family: "Noto Sans KR", sans-serif;
 }
+
+// Common
