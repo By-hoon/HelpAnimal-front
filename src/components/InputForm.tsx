@@ -41,8 +41,11 @@ export const CrewCreateForm = () => {
               className="logo-preview__image"
             />
           )}
+          <div className="preview-span__container">
+            <span>미리 보기</span>
+          </div>
         </div>
-        <div>
+        <div className="logo-file__container">
           <label className="logo-file__input" htmlFor="input-file">
             <div>
               <span className="file-input__span">{logoName}</span>
@@ -61,7 +64,7 @@ export const CrewCreateForm = () => {
             className="display-none"
           />
         </div>
-        <div>
+        <div className="name-input__container">
           <input
             value={crewName}
             onChange={onCrewNameChange}
@@ -69,10 +72,10 @@ export const CrewCreateForm = () => {
             placeholder="크루 이름 2~8자"
             minLength={2}
             maxLength={8}
-            className="crew-name__input"
+            className="name__input"
           />
         </div>
-        <div>
+        <div className="description-textarea__container">
           <textarea
             className="description__textarea"
             placeholder="크루 소개"
@@ -81,7 +84,7 @@ export const CrewCreateForm = () => {
             maxLength={150}
           />
         </div>
-        <div>
+        <div className="submit__container">
           <input type="submit" value="크루 생성" />
         </div>
       </form>
