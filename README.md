@@ -15,22 +15,29 @@
 src
 ├── components
 │   ├── CrewCard.tsx
-│   └── Header.tsx
+│   ├── Header.tsx
+│   ├── InputForm.tsx
+│   └── Title.tsx
 ├── routes
 │   ├── Crew.tsx
+│   ├── CrewCreate.tsx
 │   └── Home.tsx
 ├── shared
 │   ├── Props.tsx
 ├── styles
 │   ├── components
 │   │   ├── crewCard.scss
-│   │   └── header.scss
+│   │   ├── header.scss
+│   │   ├── inputForm.scss
+│   │   └── title.scss
 │   ├── config
 │   │   ├── _colors.scss
 │   │   ├── _font.scss
 │   │   ├── _mixins.scss
 │   │   ├── _reset.scss
 │   │   └── _variables.scss
+│   ├── routes
+│   │   └── crew.scss
 │   └── styles.scss
 ├── test
 │   ├── data.ts
