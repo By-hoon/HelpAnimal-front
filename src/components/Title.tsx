@@ -10,3 +10,11 @@ export const CrewListTitle = () => {
     </div>
   );
 };
+
+export const CrewCreateTitle = () => {
+  return (
+    <div className="title__container">
+      <span className="title__span">크루 생성</span>
+    </div>
+  );
+};
