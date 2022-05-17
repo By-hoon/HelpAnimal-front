@@ -9,6 +9,7 @@
 @import "./components/header.scss";
 @import "./components/crewCard.scss";
 @import "./components/title.scss";
+@import "./components/inputForm.scss";
 
 // Routes
 @import "./routes/crew.scss";
@@ -32,9 +33,14 @@ span,
 p,
 a,
 textarea,
-button {
+button,
+input {
   font-family: "Roboto", sans-serif;
   font-family: "Noto Sans KR", sans-serif;
+}
+
+.display-none {
+  display: none;
 }
 
 // Common

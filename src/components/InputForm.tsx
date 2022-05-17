@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 
 export const CrewCreateForm = () => {
   const [logoSrc, setLogoSrc] = useState("");
+  const [logoName, setLogoName] = useState("파일 선택");
   const [crewName, setCrewName] = useState("");
   const [introduction, setIntroduction] = useState("");
 
@@ -17,12 +18,13 @@ export const CrewCreateForm = () => {
     alert(`${crewName}크루 생성이 완료되었습니다.`);
   };
 
-  const encodeFileToBase64 = (fileBlob: Blob) => {
+  const encodeFileToBase64 = (fileBlob: Blob, fileName: string) => {
     const reader = new FileReader();
     reader.readAsDataURL(fileBlob);
     return new Promise<void>((resolve) => {
       reader.onload = () => {
         setLogoSrc(reader.result as string);
+        setLogoName(fileName);
         resolve();
       };
     });
@@ -39,19 +41,30 @@ export const CrewCreateForm = () => {
               className="logo-preview__image"
             />
           )}
+          <div className="preview-span__container">
+            <span>미리 보기</span>
+          </div>
         </div>
-        <div>
+        <div className="logo-file__container">
+          <label className="logo-file__input" htmlFor="input-file">
+            <div>
+              <span className="file-input__span">{logoName}</span>
+            </div>
+          </label>
           <input
             type="file"
+            id="input-file"
             onChange={(e) => {
               if (e.currentTarget.files !== null) {
-                encodeFileToBase64(e.currentTarget.files[0]);
+                const fileBlob = e.currentTarget.files[0];
+                const fileName = e.currentTarget.files[0].name;
+                encodeFileToBase64(fileBlob, fileName);
               }
             }}
-            className="logo-file__input"
+            className="display-none"
           />
         </div>
-        <div>
+        <div className="name-input__container">
           <input
             value={crewName}
             onChange={onCrewNameChange}
@@ -59,10 +72,10 @@ export const CrewCreateForm = () => {
             placeholder="크루 이름 2~8자"
             minLength={2}
             maxLength={8}
-            className="crew-name__input"
+            className="name__input"
           />
         </div>
-        <div>
+        <div className="description-textarea__container">
           <textarea
             className="description__textarea"
             placeholder="크루 소개"
@@ -71,7 +84,7 @@ export const CrewCreateForm = () => {
             maxLength={150}
           />
         </div>
-        <div>
+        <div className="submit__container">
           <input type="submit" value="크루 생성" />
         </div>
       </form>
