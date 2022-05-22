@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const DetailBox = () => {
+export const CrewDetailBox = () => {
   const [menu, setMenu] = useState("introduction");
   return (
     <div className="detail-box__container">
       <div className="detail-info__container--image">
-        <img src="" alt="detail-image" className="detail-info__image" />
+        <img src="" alt="detail" className="detail-info__image" />
       </div>
       <div className="detail-info__container--basic">
         <div>
@@ -35,5 +35,3 @@ const DetailBox = () => {
     </div>
   );
 };
-
-export default DetailBox;
