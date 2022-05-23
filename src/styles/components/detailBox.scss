@@ -71,6 +71,7 @@
     display: flex;
     justify-content: center;
     span {
+      cursor: pointer;
       font-size: 17px;
       color: $G-main-brown-darken-more;
       opacity: 0.5;
