@@ -5,3 +5,7 @@ export interface CrewProps {
   introduction: string;
   amount: number;
 }
+
+export interface CrewDetailProps {
+  crewDetails: Record<string, any>;
+}
