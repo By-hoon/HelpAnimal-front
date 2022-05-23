@@ -30,7 +30,9 @@ export const CrewDetailBox = () => {
             <span>메뉴3</span>
           </div>
         </div>
-        {menu === "introduction" ? <p>introduction</p> : <span>other</span>}
+        <div className="detail-content__container">
+          {menu === "introduction" ? <p>introduction</p> : <span>other</span>}
+        </div>
       </div>
     </div>
   );
