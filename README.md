@@ -15,18 +15,21 @@
 src
 ├── components
 │   ├── CrewCard.tsx
+│   ├── DetailBox.tsx
 │   ├── Header.tsx
 │   ├── InputForm.tsx
 │   └── Title.tsx
 ├── routes
 │   ├── Crew.tsx
 │   ├── CrewCreate.tsx
+│   ├── CrewDetail.tsx
 │   └── Home.tsx
 ├── shared
 │   ├── Props.tsx
 ├── styles
 │   ├── components
 │   │   ├── crewCard.scss
+│   │   ├── detailBox.scss
 │   │   ├── header.scss
 │   │   ├── inputForm.scss
 │   │   └── title.scss
