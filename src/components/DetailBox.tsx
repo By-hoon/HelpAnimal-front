@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react";
 import { CrewDetailProps } from "../shared/Props";
+import { CrewDetailContent } from "./DetailContent";
 
 export const CrewDetailBox = ({ crewDetails }: CrewDetailProps) => {
   const [menu, setMenu] = useState("introduction");
@@ -15,6 +16,7 @@ export const CrewDetailBox = ({ crewDetails }: CrewDetailProps) => {
   const setMenu3 = () => {
     setMenu("menu3");
   };
+
   return (
     <div className="detail-box__container">
       <div className="detail-info__container--image">
@@ -65,13 +67,7 @@ export const CrewDetailBox = ({ crewDetails }: CrewDetailProps) => {
           </div>
         </div>
         <div className="detail-content__container">
-          {menu === "introduction" ? (
-            <p>{crewDetails.introduction}</p>
-          ) : menu === "menu2" ? (
-            <p>menu2</p>
-          ) : (
-            <p>menu3</p>
-          )}
+          <CrewDetailContent menu={menu} crewDetails={crewDetails} />
         </div>
       </div>
     </div>
