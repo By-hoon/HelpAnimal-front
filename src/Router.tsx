@@ -15,7 +15,7 @@ const Router = () => {
         <Route path="/crew" element={<Crew />} />
         <Route path="/crew/create" element={<CrewCreate />} />
         <Route path="/crew/edit" element={<CrewEdit />}></Route>
-        <Route path="/crew/:id" element={<CrewDetail />} />
+        <Route path="/crew/detail" element={<CrewDetail />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
