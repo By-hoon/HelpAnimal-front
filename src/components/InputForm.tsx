@@ -1,5 +1,10 @@
-import { useCallback, useState } from "react";
-import { CrewDetailProps } from "../shared/Props";
+import { useCallback, useEffect, useState } from "react";
+import { crewEditData } from "../test/data";
+import { useLocation } from "react-router-dom";
+
+interface StateProps {
+  crewId: string;
+}
 
 export const CrewCreateForm = () => {
   const [logoSrc, setLogoSrc] = useState("");
@@ -17,6 +22,7 @@ export const CrewCreateForm = () => {
 
   const onSubmit = () => {
     alert(`${crewName}크루 생성이 완료되었습니다.`);
+    //crew 생성 api 호출
   };
 
   const encodeFileToBase64 = (fileBlob: Blob, fileName: string) => {
@@ -35,13 +41,7 @@ export const CrewCreateForm = () => {
     <div className="form__container">
       <form onSubmit={onSubmit}>
         <div className="logo-preview__container">
-          {logoSrc && (
-            <img
-              src={logoSrc}
-              alt="logo-preview"
-              className="logo-preview__image"
-            />
-          )}
+          {logoSrc && <img src={logoSrc} alt="logo-preview" className="logo-preview__image" />}
           <div className="preview-span__container">
             <span>미리 보기</span>
           </div>
@@ -93,11 +93,20 @@ export const CrewCreateForm = () => {
   );
 };
 
-export const CrewEditForm = ({ crewDetails }: CrewDetailProps) => {
-  const [logoSrc, setLogoSrc] = useState(crewDetails.logo);
+export const CrewEditForm = () => {
+  const { crewId } = (useLocation().state as StateProps) || "tempCrewId";
+
+  const [logoSrc, setLogoSrc] = useState(crewEditData.logo);
   const [logoName, setLogoName] = useState("새로운 파일 선택");
-  const [crewName, setCrewName] = useState(crewDetails.name);
-  const [introduction, setIntroduction] = useState(crewDetails.introduction);
+  const [crewName, setCrewName] = useState(crewEditData.name);
+  const [introduction, setIntroduction] = useState(crewEditData.introduction);
+
+  useEffect(() => {
+    //crewId를 활용한 api 호출
+    //setLogoSrc();
+    //setCrewName();
+    //setIntroduction();
+  }, [crewId]);
 
   const onCrewNameChange = useCallback((e) => {
     setCrewName(e.target.value);
@@ -109,6 +118,7 @@ export const CrewEditForm = ({ crewDetails }: CrewDetailProps) => {
 
   const onSubmit = () => {
     alert(`정보 수정이 완료되었습니다.`);
+    //crew 정보 수정 api 호출
   };
 
   const encodeFileToBase64 = (fileBlob: Blob, fileName: string) => {
@@ -127,13 +137,7 @@ export const CrewEditForm = ({ crewDetails }: CrewDetailProps) => {
     <div className="form__container">
       <form onSubmit={onSubmit}>
         <div className="logo-preview__container">
-          {logoSrc && (
-            <img
-              src={logoSrc}
-              alt="logo-preview"
-              className="logo-preview__image"
-            />
-          )}
+          {logoSrc && <img src={logoSrc} alt="logo-preview" className="logo-preview__image" />}
           <div className="preview-span__container">
             <span>미리 보기</span>
           </div>
