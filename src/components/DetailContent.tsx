@@ -1,16 +1,13 @@
 interface CrewDetailContentProps {
   menu: string;
-  crewDetails: Record<string, any>;
+  crewIntroduction: string;
 }
 
-export const CrewDetailContent = ({
-  menu,
-  crewDetails,
-}: CrewDetailContentProps) => {
+export const CrewDetailContent = ({ menu, crewIntroduction }: CrewDetailContentProps) => {
   const Render = () => {
     switch (menu) {
       case "introduction": {
-        return <p>{crewDetails.introduction}</p>;
+        return <p>{crewIntroduction}</p>;
       }
       case "menu2": {
         return <p>menu2</p>;
