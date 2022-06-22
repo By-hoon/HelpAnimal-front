@@ -1,10 +1,16 @@
+import { Dispatch, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 import { CrewProps } from "../shared/Props";
 
-const CrewCard = (crew: CrewProps) => {
+interface CrewCardProps {
+  crew: CrewProps;
+  setLastCrew: Dispatch<SetStateAction<HTMLAnchorElement | null | undefined>>;
+}
+
+const CrewCard = ({ crew, setLastCrew }: CrewCardProps) => {
   return (
     <div className="card__container">
-      <Link to={`/crew/detail`} state={{ crewId: crew.id }} className="link--perspective">
+      <Link to={`/crew/detail`} state={{ crewId: crew.id }} ref={setLastCrew} className="link--perspective">
         <div className="card__container--forward">
           <div className="logo__container">
             <img src={crew.logo} alt="crew-logo" className="logo__image" />
