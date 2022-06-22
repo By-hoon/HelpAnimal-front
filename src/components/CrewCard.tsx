@@ -4,7 +4,7 @@ import { CrewProps } from "../shared/Props";
 const CrewCard = (crew: CrewProps) => {
   return (
     <div className="card__container">
-      <Link to={`/crew/detail`} state={{ crewId: crew.id }} className="link">
+      <Link to={`/crew/detail`} state={{ crewId: crew.id }} className="link--perspective">
         <div className="card__container--forward">
           <div className="logo__container">
             <img src={crew.logo} alt="crew-logo" className="logo__image" />
