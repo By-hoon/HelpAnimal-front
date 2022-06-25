@@ -26,3 +26,11 @@ export const CrewEditTitle = () => {
     </div>
   );
 };
+
+export const RecruitmentListTitle = () => {
+  return (
+    <div className="title__container">
+      <span className="title__span">공고 목록</span>
+    </div>
+  );
+};
