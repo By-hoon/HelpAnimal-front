@@ -1,5 +1,5 @@
 import Recruitments from "../components/Recruitments";
-import { RecruitmentListTitle } from "../components/Title";
+import { RecruitmentListTitle } from "../components/Titles";
 
 const Recruiment = () => {
   return (
