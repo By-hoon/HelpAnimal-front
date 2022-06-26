@@ -1,7 +1,7 @@
 import Recruitments from "../components/Recruitments";
 import { RecruitmentListTitle } from "../components/Titles";
 
-const Recruiment = () => {
+const Recruitment = () => {
   return (
     <>
       <RecruitmentListTitle />
@@ -10,4 +10,4 @@ const Recruiment = () => {
   );
 };
 
-export default Recruiment;
+export default Recruitment;
