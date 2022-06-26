@@ -7,8 +7,8 @@ const Recruitments = () => {
   const [recruitments, setRecruitments] = useState(recruitmentsData[0]);
 
   return (
-    <div className="crew__container">
-      <div className="recruiments__container">
+    <div className="recruiment__container">
+      <div className="recruiment-list__container">
         {recruitments.map((recruitment: RecruitmentProps) => (
           <RecruitmentCard key={recruitment.id} recruitment={recruitment} />
         ))}

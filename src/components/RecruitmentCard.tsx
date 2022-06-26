@@ -12,11 +12,18 @@ const RecruitmentCard = ({ recruitment }: RecruitmentCardProps) => {
         <div className="recruitment__container">
           <div className="recruitment-image__container">
             <img src={recruitment.imageUrl} alt="recruitment-main" className="recruitment__image" />
+            <img
+              src={recruitment.imageUrl}
+              alt="recruitment-main"
+              className="recruitment__image--background"
+            />
           </div>
-          <div className="recruitment-name">{recruitment.name}</div>
-          <div className="recruitment-author">{recruitment.author}</div>
-          <div className="recruitment-participant">{recruitment.participant}</div>
-          <div className="recruitment-animal-type">{recruitment.animalType}</div>
+          <div className="recruitment-content__container">
+            <div className="recruitment-name">{recruitment.name}</div>
+            <div className="recruitment-author">{recruitment.author}</div>
+            <div className="recruitment-participant">{recruitment.participant}</div>
+            <div className="recruitment-animal-type">{recruitment.animalType}</div>
+          </div>
         </div>
       </Link>
     </div>
