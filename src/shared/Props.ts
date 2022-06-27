@@ -7,5 +7,9 @@ export interface CrewProps {
 }
 
 export interface CrewDetailProps {
-  crewDetails: Record<string, any>;
+  id: string;
+  name: string;
+  logo: string;
+  introduction: string;
+  amount: number;
 }

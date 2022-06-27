@@ -18,3 +18,11 @@ export const CrewCreateTitle = () => {
     </div>
   );
 };
+
+export const CrewEditTitle = () => {
+  return (
+    <div className="title__container">
+      <span className="title__span">크루 수정</span>
+    </div>
+  );
+};

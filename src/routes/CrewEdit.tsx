@@ -1,8 +1,13 @@
 import { CrewEditForm } from "../components/InputForm";
-import { crewDetails } from "../test/data";
+import { CrewEditTitle } from "../components/Title";
 
 const CrewEdit = () => {
-  return <CrewEditForm crewDetails={crewDetails} />;
+  return (
+    <>
+      <CrewEditTitle />
+      <CrewEditForm />
+    </>
+  );
 };
 
 export default CrewEdit;
