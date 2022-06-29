@@ -9,19 +9,3 @@
   flex-wrap: wrap;
   overflow: hidden;
 }
-
-.create-crew__link {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: white;
-  color: $G-main-brown-darken-more;
-  font-size: 20px;
-  border: 1px $G-main-brown-darken solid;
-  padding: 10px;
-  &:hover {
-    border: 1px $G-main-brown-lighten solid;
-    color: white;
-    background-color: $G-cloudy;
-  }
-}
