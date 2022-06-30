@@ -37,3 +37,11 @@ export const RecruitmentListTitle = () => {
     </div>
   );
 };
+
+export const RecruitmentCreateTitle = () => {
+  return (
+    <div className="title__container">
+      <span className="title__span">공고 생성</span>
+    </div>
+  );
+};
