@@ -5,7 +5,7 @@ const RecruitmentCreate = () => {
   return (
     <>
       <RecruitmentCreateTitle />
-      {/* <RecruitmentCreateForm /> */}
+      <RecruitmentCreateForm />
     </>
   );
 };
