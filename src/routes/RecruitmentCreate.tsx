@@ -1,4 +1,4 @@
-import { RecruitmentCreateForm } from "../components/InputForm";
+import { RecruitmentCreateForm } from "../components/RecruitmentForm";
 import { RecruitmentCreateTitle } from "../components/Titles";
 
 const RecruitmentCreate = () => {

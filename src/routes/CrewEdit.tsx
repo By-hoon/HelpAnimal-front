@@ -1,4 +1,4 @@
-import { CrewEditForm } from "../components/InputForm";
+import { CrewEditForm } from "../components/CrewForm";
 import { CrewEditTitle } from "../components/Titles";
 
 const CrewEdit = () => {
