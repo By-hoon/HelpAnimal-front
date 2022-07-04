@@ -1,0 +1,11 @@
+.recruiment__container {
+  padding: 20px;
+}
+
+.recruiment-list__container {
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  overflow: hidden;
+}

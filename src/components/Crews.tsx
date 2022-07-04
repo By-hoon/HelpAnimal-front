@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { CrewProps } from "../shared/Props";
 import { CrewsData } from "../test/data";
 import CrewCard from "./CrewCard";
-import { CrewListTitle } from "./Title";
 
 const Crews = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -35,7 +34,6 @@ const Crews = () => {
 
   return (
     <div className="crew__container">
-      <CrewListTitle />
       <div className="crew-list__container">
         {crews.map((crew: CrewProps) => (
           <CrewCard key={crew.id} crew={crew} setLastCrew={setLastCrew} />
