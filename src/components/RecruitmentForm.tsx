@@ -22,11 +22,7 @@ export const RecruitmentCreateForm = () => {
   }, []);
 
   const onParticipantAmount = useCallback((e) => {
-    if (e.target.value <= 1) {
-      alert("인원수는 2명 이상이어야 합니다.");
-    } else {
-      setParticipantAmount(e.target.value);
-    }
+    setParticipantAmount(e.target.value);
   }, []);
 
   const onChangeRecruitType = useCallback((e) => {
@@ -127,6 +123,8 @@ export const RecruitmentCreateForm = () => {
             type="number"
             placeholder="인원수 입력"
             className="animal-type__input"
+            min="2"
+            max="399"
           />
         </div>
         <div className="recruit-method__container">
