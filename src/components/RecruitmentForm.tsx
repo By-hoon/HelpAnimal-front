@@ -1,13 +1,27 @@
 import { useCallback, useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
 
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
+  const [currentImage, setCurrentImage] = useState(0);
   const [name, setName] = useState("");
   const [recruitType, setRecruitType] = useState("crew");
   const [content, setContent] = useState("");
   const [animalType, setAnimalType] = useState("");
   const [participantAmount, setParticipantAmount] = useState(2);
   const [recruitMethod, setRecruitMethod] = useState("choice");
+
+  const showLeftImage = () => {
+    if (currentImage > 0) {
+      setCurrentImage(currentImage - 1);
+    }
+  };
+
+  const showRightImage = () => {
+    if (currentImage < images.length - 1) {
+      setCurrentImage(currentImage + 1);
+    }
+  };
 
   const onNameChange = useCallback((e) => {
     setName(e.target.value);
@@ -48,12 +62,15 @@ export const RecruitmentCreateForm = () => {
     <div className="form__container">
       <form onSubmit={onSubmit}>
         <div className="logo-preview__container">
-          {images.length > 0 && <img src={images[0]} alt="logo-preview" className="logo-preview__image" />}
+          {images.length > 0 && (
+            <img src={images[currentImage]} alt="logo-preview" className="logo-preview__image" />
+          )}
           <div className="preview-span__container">
             <span>미리 보기</span>
           </div>
         </div>
         <div className="logo-file__container">
+          {/* 클래스명 변경 */}
           <label className="logo-file__input" htmlFor="input-file">
             <div>
               <span className="recruitment-images-input__span">파일 선택</span>
@@ -72,6 +89,11 @@ export const RecruitmentCreateForm = () => {
             }}
             className="display-none"
           />
+        </div>
+        <div className="image-button__container">
+          <Icon icon="ant-design:left-outlined" onClick={showLeftImage} />
+          <Icon icon="ant-design:right-outlined" onClick={showRightImage} />
+          <span>{currentImage}</span>
         </div>
         <div className="name-input__container">
           <input
