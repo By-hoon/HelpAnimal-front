@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
   const [currentImage, setCurrentImage] = useState(0);
+  const [imagesParagraph, setImagesParagraph] = useState("");
   const [name, setName] = useState("");
   const [recruitType, setRecruitType] = useState("crew");
   const [content, setContent] = useState("");
@@ -14,14 +15,22 @@ export const RecruitmentCreateForm = () => {
   const showLeftImage = () => {
     if (currentImage > 0) {
       setCurrentImage(currentImage - 1);
+    } else {
+      setCurrentImage(images.length - 1);
     }
   };
 
   const showRightImage = () => {
     if (currentImage < images.length - 1) {
       setCurrentImage(currentImage + 1);
+    } else {
+      setCurrentImage(0);
     }
   };
+
+  const deleteCurrentImage = () => {};
+
+  const initializeIamges = () => {};
 
   const onNameChange = useCallback((e) => {
     setName(e.target.value);
@@ -69,13 +78,34 @@ export const RecruitmentCreateForm = () => {
             <span>미리 보기</span>
           </div>
         </div>
-        <div className="logo-file__container">
-          {/* 클래스명 변경 */}
-          <label className="logo-file__input" htmlFor="input-file">
-            <div>
-              <span className="recruitment-images-input__span">파일 선택</span>
-            </div>
-          </label>
+        <div className="recruitment-images__container">
+          <div>
+            <p className="recruitment-images-input__p">{imagesParagraph}</p>
+            <label className="recruitment-images__input" htmlFor="input-file">
+              {images.length > 0 ? (
+                <span className="recruitment-images-input__span pointer">추가 선택</span>
+              ) : (
+                <span className="recruitment-images-input__span pointer">사진 선택</span>
+              )}
+            </label>
+            <span
+              className="recruitment-images-input__span pointer"
+              onClick={deleteCurrentImage}
+              onMouseOver={() => setImagesParagraph("현재 이미지를 삭제합니다.")}
+              onMouseLeave={() => setImagesParagraph("")}
+            >
+              삭제
+            </span>
+            <span
+              className="recruitment-images-input__span pointer"
+              onClick={initializeIamges}
+              onMouseOver={() => setImagesParagraph("추가된 이미지를 초기화합니다.")}
+              onMouseLeave={() => setImagesParagraph("")}
+            >
+              초기화
+            </span>
+          </div>
+
           <input
             type="file"
             id="input-file"
@@ -91,9 +121,8 @@ export const RecruitmentCreateForm = () => {
           />
         </div>
         <div className="image-button__container">
-          <Icon icon="ant-design:left-outlined" onClick={showLeftImage} />
-          <Icon icon="ant-design:right-outlined" onClick={showRightImage} />
-          <span>{currentImage}</span>
+          <Icon icon="ant-design:left-outlined" className="pointer" onClick={showLeftImage} />
+          <Icon icon="ant-design:right-outlined" className="pointer" onClick={showRightImage} />
         </div>
         <div className="name-input__container">
           <input
