@@ -1,0 +1,84 @@
+.recruitment-images__container {
+  @extend .logo-preview__container;
+}
+
+.recruitment-images__image {
+  @extend .logo-preview__image;
+}
+
+.recruitment-images-button__container {
+  position: relative;
+}
+
+.recruitment-images-input__p {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.recruitment-images-input__p {
+  color: $G-main-brown-darken;
+  z-index: 20;
+}
+
+.image-buttons__container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 310px;
+  height: 240px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-button__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  svg {
+    font-size: 20px;
+    color: $G-main-brown-darken;
+  }
+  &:hover {
+    box-shadow: 2px 2px 10px $G-cloudy;
+  }
+}
+
+.recruitment-images-button__container {
+  margin-top: 10px;
+}
+
+.recruitment-images-input__span {
+  font-size: 17px;
+  color: $G-main-brown-lighten;
+  margin: 0 10px;
+}
+
+.recruit-type__container,
+.recruit-method__container {
+  width: 120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recruit-type__container,
+.participant-amount__container,
+.recruit-method__container {
+  margin-top: 30px;
+}
+
+.animal-type__input {
+  @extend .name__input;
+  margin-top: 30px;
+}
+
+.participant-amount__input {
+  font-size: 15px;
+  color: $G-main-brown-darken;
+  outline-color: $G-main-brown-darken;
+  padding: 5px;
+  border: 1px solid $G-cloudy;
+}

@@ -10,7 +10,7 @@ export const RecruitmentCreateForm = () => {
   const [content, setContent] = useState("");
   const [animalType, setAnimalType] = useState("");
   const [participantAmount, setParticipantAmount] = useState(2);
-  const [recruitMethod, setRecruitMethod] = useState("choice");
+  const [recruitMethod, setRecruitMethod] = useState("firstCome");
 
   const showLeftImage = () => {
     if (currentImage > 0) {
@@ -70,15 +70,23 @@ export const RecruitmentCreateForm = () => {
   return (
     <div className="form__container">
       <form onSubmit={onSubmit}>
-        <div className="logo-preview__container">
+        <div className="recruitment-images__container">
           {images.length > 0 && (
-            <img src={images[currentImage]} alt="logo-preview" className="logo-preview__image" />
+            <img src={images[currentImage]} alt="recruitment-images" className="recruitment-images__image" />
           )}
           <div className="preview-span__container">
             <span>미리 보기</span>
           </div>
+          <div className="image-buttons__container">
+            <div className="image-button__container pointer" onClick={showLeftImage}>
+              <Icon icon="ant-design:left-outlined" />
+            </div>
+            <div className="image-button__container pointer" onClick={showRightImage}>
+              <Icon icon="ant-design:right-outlined" />
+            </div>
+          </div>
         </div>
-        <div className="recruitment-images__container">
+        <div className="recruitment-images-button__container">
           <div>
             <p className="recruitment-images-input__p">{imagesParagraph}</p>
             <label className="recruitment-images__input" htmlFor="input-file">
@@ -119,10 +127,6 @@ export const RecruitmentCreateForm = () => {
             }}
             className="display-none"
           />
-        </div>
-        <div className="image-button__container">
-          <Icon icon="ant-design:left-outlined" className="pointer" onClick={showLeftImage} />
-          <Icon icon="ant-design:right-outlined" className="pointer" onClick={showRightImage} />
         </div>
         <div className="name-input__container">
           <input
@@ -173,23 +177,12 @@ export const RecruitmentCreateForm = () => {
             onChange={onParticipantAmount}
             type="number"
             placeholder="인원수 입력"
-            className="animal-type__input"
+            className="participant-amount__input"
             min="2"
             max="399"
           />
         </div>
         <div className="recruit-method__container">
-          <div>
-            <input
-              type="radio"
-              name="recruit-method"
-              value="choice"
-              id="choice"
-              checked={recruitMethod === "choice"}
-              onChange={onChangeRecruitMethod}
-            />
-            <label htmlFor="choice">추첨</label>
-          </div>
           <div>
             <input
               type="radio"
@@ -200,6 +193,17 @@ export const RecruitmentCreateForm = () => {
               onChange={onChangeRecruitMethod}
             />
             <label htmlFor="firstCome">선착순</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="recruit-method"
+              value="choice"
+              id="choice"
+              checked={recruitMethod === "choice"}
+              onChange={onChangeRecruitMethod}
+            />
+            <label htmlFor="choice">추첨</label>
           </div>
         </div>
         <div className="description-textarea__container">
