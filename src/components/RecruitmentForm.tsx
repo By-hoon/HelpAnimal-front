@@ -28,9 +28,19 @@ export const RecruitmentCreateForm = () => {
     }
   };
 
-  const deleteCurrentImage = () => {};
+  const deleteCurrentImage = () => {
+    const ok = window.confirm("현재 사진을 삭제하시겠습니까?");
+    if (ok) {
+      images.splice(currentImage, 1);
+    }
+  };
 
-  const initializeIamges = () => {};
+  const initializeIamges = () => {
+    const ok = window.confirm("추가된 이미지를 초기화 하시겠습니까?");
+    if (ok) {
+      setImages([]);
+    }
+  };
 
   const onNameChange = useCallback((e) => {
     setName(e.target.value);
