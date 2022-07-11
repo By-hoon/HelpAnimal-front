@@ -9,10 +9,11 @@
 @import "./components/header.scss";
 @import "./components/crewCard.scss";
 @import "./components/title.scss";
-@import "./components/inputForm.scss";
 @import "./components/detailBox.scss";
 @import "./components/recruitmentCard.scss";
 @import "./components/recruitments.scss";
+@import "./components/crewForm.scss";
+@import "./components/recruitmentForm.scss";
 
 // Routes
 @import "./routes/crew.scss";
@@ -44,6 +45,10 @@ input {
 
 .display-none {
   display: none;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 // Common

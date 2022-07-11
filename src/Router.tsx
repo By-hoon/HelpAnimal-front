@@ -6,6 +6,7 @@ import CrewDetail from "./routes/CrewDetail";
 import CrewEdit from "./routes/CrewEdit";
 import Home from "./routes/Home";
 import Recruitment from "./routes/Recruitment";
+import RecruitmentCreate from "./routes/RecruitmentCreate";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path="/crew/edit" element={<CrewEdit />}></Route>
         <Route path="/crew/detail" element={<CrewDetail />} />
         <Route path="/recruit" element={<Recruitment />} />
+        <Route path="/recruit/create" element={<RecruitmentCreate />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
