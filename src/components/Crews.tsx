@@ -8,13 +8,13 @@ const Crews = () => {
   const [crews, setCrews] = useState([]);
   const [lastCrew, setLastCrew] = useState<HTMLAnchorElement | null>();
 
-  const onIntersect: IntersectionObserverCallback = (playlists, observer) => {
-    playlists.forEach((playlist) => {
-      if (playlist.isIntersecting) {
+  const onIntersect: IntersectionObserverCallback = (crews, observer) => {
+    crews.forEach((crew) => {
+      if (crew.isIntersecting) {
         if (CrewsData[pageIndex + 1]) {
           setPageIndex(pageIndex + 1);
         }
-        observer.unobserve(playlist.target);
+        observer.unobserve(crew.target);
       }
     });
   };
