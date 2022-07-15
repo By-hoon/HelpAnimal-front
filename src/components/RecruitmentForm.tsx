@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
+import QuillEditor from "./QuillEditor";
 
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
@@ -48,10 +49,6 @@ export const RecruitmentCreateForm = () => {
 
   const onAnimalTypeChange = useCallback((e) => {
     setAnimalType(e.target.value);
-  }, []);
-
-  const onContentChange = useCallback((e) => {
-    setContent(e.target.value);
   }, []);
 
   const onParticipantAmount = useCallback((e) => {
@@ -217,13 +214,7 @@ export const RecruitmentCreateForm = () => {
           </div>
         </div>
         <div className="description-textarea__container">
-          <textarea
-            className="description__textarea"
-            placeholder="공고 설명"
-            value={content}
-            onChange={onContentChange}
-            maxLength={150}
-          />
+          <QuillEditor />
         </div>
         <div className="submit__container">
           <input type="submit" value="공고 생성" />
