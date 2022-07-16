@@ -1,7 +1,12 @@
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
+import { useEffect } from "react";
 
-const QuillEditor = () => {
+interface QuillEditorProps {
+  setContent: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const QuillEditor = ({ setContent }: QuillEditorProps) => {
   const modules = {
     toolbar: [
       ["bold", "italic", "underline", "strike"],
@@ -21,6 +26,14 @@ const QuillEditor = () => {
   };
 
   const { quill, quillRef } = useQuill({ modules });
+
+  useEffect(() => {
+    if (quill) {
+      quill.on("text-change", () => {
+        setContent(quill.root.innerHTML);
+      });
+    }
+  }, [quill]);
 
   return (
     <>

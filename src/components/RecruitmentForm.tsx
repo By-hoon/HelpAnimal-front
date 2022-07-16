@@ -63,8 +63,10 @@ export const RecruitmentCreateForm = () => {
     setRecruitMethod(e.target.value);
   }, []);
 
-  const onSubmit = () => {
+  const onSubmit = (e: any) => {
+    e.preventDefault();
     images.map((file) => URL.revokeObjectURL(file));
+    console.log(content);
     //공고 생성 api 호출
   };
 
@@ -213,8 +215,8 @@ export const RecruitmentCreateForm = () => {
             <label htmlFor="choice">추첨</label>
           </div>
         </div>
-        <div className="description-textarea__container">
-          <QuillEditor />
+        <div className="text-editor__container">
+          <QuillEditor setContent={setContent} />
         </div>
         <div className="submit__container">
           <input type="submit" value="공고 생성" />
