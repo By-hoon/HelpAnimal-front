@@ -3,10 +3,11 @@ import "quill/dist/quill.snow.css";
 import { useEffect } from "react";
 
 interface QuillEditorProps {
+  initialValue?: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const QuillEditor = ({ setContent }: QuillEditorProps) => {
+const QuillEditor = ({ initialValue, setContent }: QuillEditorProps) => {
   const modules = {
     toolbar: [
       ["bold", "italic", "underline", "strike"],
@@ -29,6 +30,9 @@ const QuillEditor = ({ setContent }: QuillEditorProps) => {
 
   useEffect(() => {
     if (quill) {
+      if (initialValue) {
+        quill.clipboard.dangerouslyPasteHTML(initialValue);
+      }
       quill.on("text-change", () => {
         setContent(quill.root.innerHTML);
       });

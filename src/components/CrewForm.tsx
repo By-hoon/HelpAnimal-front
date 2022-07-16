@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { crewEditData } from "../test/data";
 import { useLocation } from "react-router-dom";
+import QuillEditor from "./QuillEditor";
 
 interface StateProps {
   crewId: string;
@@ -14,10 +15,6 @@ export const CrewCreateForm = () => {
 
   const onCrewNameChange = useCallback((e) => {
     setCrewName(e.target.value);
-  }, []);
-
-  const onIntroductionChange = useCallback((e) => {
-    setIntroduction(e.target.value);
   }, []);
 
   const onSubmit = () => {
@@ -76,14 +73,8 @@ export const CrewCreateForm = () => {
             className="name__input"
           />
         </div>
-        <div className="description-textarea__container">
-          <textarea
-            className="description__textarea"
-            placeholder="크루 소개"
-            value={introduction}
-            onChange={onIntroductionChange}
-            maxLength={150}
-          />
+        <div className="text-editor__container">
+          <QuillEditor setContent={setIntroduction} />
         </div>
         <div className="submit__container">
           <input type="submit" value="크루 생성" />
@@ -99,7 +90,7 @@ export const CrewEditForm = () => {
   const [logoSrc, setLogoSrc] = useState(crewEditData.logo);
   const [logoName, setLogoName] = useState("새로운 파일 선택");
   const [crewName, setCrewName] = useState(crewEditData.name);
-  const [introduction, setIntroduction] = useState(crewEditData.introduction);
+  const [introduction, setIntroduction] = useState("");
 
   useEffect(() => {
     //crewId를 활용한 api 호출
@@ -110,10 +101,6 @@ export const CrewEditForm = () => {
 
   const onCrewNameChange = useCallback((e) => {
     setCrewName(e.target.value);
-  }, []);
-
-  const onIntroductionChange = useCallback((e) => {
-    setIntroduction(e.target.value);
   }, []);
 
   const onSubmit = () => {
@@ -172,14 +159,8 @@ export const CrewEditForm = () => {
             className="name__input"
           />
         </div>
-        <div className="description-textarea__container">
-          <textarea
-            className="description__textarea"
-            placeholder="크루 소개"
-            value={introduction}
-            onChange={onIntroductionChange}
-            maxLength={150}
-          />
+        <div className="text-editor__container">
+          <QuillEditor initialValue={crewEditData.introduction} setContent={setIntroduction} />
         </div>
         <div className="submit__container">
           <input type="submit" value="정보 수정" />
