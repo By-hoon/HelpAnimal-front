@@ -82,3 +82,10 @@
   padding: 5px;
   border: 1px solid $G-cloudy;
 }
+
+.text-editor__container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}

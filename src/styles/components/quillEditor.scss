@@ -1,0 +1,25 @@
+.ql-toolbar, .ql-container{
+    border: 1px solid $G-cloudy !important;
+}
+
+.ql-toolbar{
+    width: 800px;
+}
+
+.ql-container {
+    width: 800px;
+    height: 250px;
+    border-top: 0 !important;
+}
+
+.ql-stroke{
+    stroke: $G-main-brown-darken !important;
+}
+
+.ql-picker-label{
+    color: $G-main-brown-darken !important;
+}
+
+.ql-fill{
+    fill:  $G-main-brown-darken !important;
+}
