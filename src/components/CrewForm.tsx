@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { crewEditData } from "../test/data";
 import { useLocation } from "react-router-dom";
 import QuillEditor from "./QuillEditor";
+import InputTitles from "./InputTitles";
 
 interface StateProps {
   crewId: string;
@@ -37,6 +38,7 @@ export const CrewCreateForm = () => {
   return (
     <div className="form__container">
       <form onSubmit={onSubmit}>
+        <InputTitles title={"크루 로고"} />
         <div className="logo-preview__container">
           {logoSrc && <img src={logoSrc} alt="logo-preview" className="logo-preview__image" />}
           <div className="preview-span__container">
@@ -62,6 +64,7 @@ export const CrewCreateForm = () => {
             className="display-none"
           />
         </div>
+        <InputTitles title={"크루 이름"} />
         <div className="name-input__container">
           <input
             value={crewName}
@@ -73,6 +76,7 @@ export const CrewCreateForm = () => {
             className="name__input"
           />
         </div>
+        <InputTitles title={"크루 소개"} />
         <div className="text-editor__container">
           <QuillEditor setContent={setIntroduction} />
         </div>
@@ -123,6 +127,7 @@ export const CrewEditForm = () => {
   return (
     <div className="form__container">
       <form onSubmit={onSubmit}>
+        <InputTitles title={"크루 로고"} />
         <div className="logo-preview__container">
           {logoSrc && <img src={logoSrc} alt="logo-preview" className="logo-preview__image" />}
           <div className="preview-span__container">
@@ -148,6 +153,7 @@ export const CrewEditForm = () => {
             className="display-none"
           />
         </div>
+        <InputTitles title={"크루 이름"} />
         <div className="name-input__container">
           <input
             value={crewName}
@@ -159,6 +165,7 @@ export const CrewEditForm = () => {
             className="name__input"
           />
         </div>
+        <InputTitles title={"크루 소개"} />
         <div className="text-editor__container">
           <QuillEditor initialValue={crewEditData.introduction} setContent={setIntroduction} />
         </div>
