@@ -64,15 +64,8 @@
   justify-content: space-between;
 }
 
-.recruit-type__container,
-.participant-amount__container,
-.recruit-method__container {
-  margin-top: 30px;
-}
-
 .animal-type__input {
   @extend .name__input;
-  margin-top: 30px;
 }
 
 .participant-amount__input {
@@ -83,9 +76,8 @@
   border: 1px solid $G-cloudy;
 }
 
-.text-editor__container{
+.text-editor__container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 30px;
 }
