@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
+import QuillEditor from "./QuillEditor";
 
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
@@ -50,10 +51,6 @@ export const RecruitmentCreateForm = () => {
     setAnimalType(e.target.value);
   }, []);
 
-  const onContentChange = useCallback((e) => {
-    setContent(e.target.value);
-  }, []);
-
   const onParticipantAmount = useCallback((e) => {
     setParticipantAmount(e.target.value);
   }, []);
@@ -66,8 +63,10 @@ export const RecruitmentCreateForm = () => {
     setRecruitMethod(e.target.value);
   }, []);
 
-  const onSubmit = () => {
+  const onSubmit = (e: any) => {
+    e.preventDefault();
     images.map((file) => URL.revokeObjectURL(file));
+    console.log(content);
     //공고 생성 api 호출
   };
 
@@ -216,14 +215,8 @@ export const RecruitmentCreateForm = () => {
             <label htmlFor="choice">추첨</label>
           </div>
         </div>
-        <div className="description-textarea__container">
-          <textarea
-            className="description__textarea"
-            placeholder="공고 설명"
-            value={content}
-            onChange={onContentChange}
-            maxLength={150}
-          />
+        <div className="text-editor__container">
+          <QuillEditor setContent={setContent} />
         </div>
         <div className="submit__container">
           <input type="submit" value="공고 생성" />
