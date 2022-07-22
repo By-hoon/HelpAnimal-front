@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import QuillEditor from "./QuillEditor";
+import InputTitles from "./InputTitles";
 
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
@@ -79,6 +80,7 @@ export const RecruitmentCreateForm = () => {
   return (
     <div className="form__container">
       <form onSubmit={onSubmit}>
+        <InputTitles title={"공고 사진"} />
         <div className="recruitment-images__container">
           {images.length > 0 && (
             <img src={images[currentImage]} alt="recruitment-images" className="recruitment-images__image" />
@@ -137,6 +139,7 @@ export const RecruitmentCreateForm = () => {
             className="display-none"
           />
         </div>
+        <InputTitles title={"공고 이름"} />
         <div className="name-input__container">
           <input
             value={name}
@@ -147,6 +150,7 @@ export const RecruitmentCreateForm = () => {
             className="name__input"
           />
         </div>
+        <InputTitles title={"공고 유형"} />
         <div className="recruit-type__container">
           <div>
             <input
@@ -171,6 +175,7 @@ export const RecruitmentCreateForm = () => {
             <label htmlFor="personal">개인</label>
           </div>
         </div>
+        <InputTitles title={"동물 종류"} />
         <div className="animal-type__container">
           <input
             value={animalType}
@@ -180,6 +185,7 @@ export const RecruitmentCreateForm = () => {
             className="animal-type__input"
           />
         </div>
+        <InputTitles title={"모집 인원"} />
         <div className="participant-amount__container">
           <input
             value={participantAmount}
@@ -191,6 +197,7 @@ export const RecruitmentCreateForm = () => {
             max="399"
           />
         </div>
+        <InputTitles title={"선발 방식"} />
         <div className="recruit-method__container">
           <div>
             <input
@@ -215,6 +222,7 @@ export const RecruitmentCreateForm = () => {
             <label htmlFor="choice">추첨</label>
           </div>
         </div>
+        <InputTitles title={"공고 내용"} />
         <div className="text-editor__container">
           <QuillEditor setContent={setContent} />
         </div>
