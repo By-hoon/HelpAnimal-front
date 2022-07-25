@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import QuillEditor from "./QuillEditor";
+import { recruitmentEditData } from "../test/data";
 
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
@@ -227,15 +228,15 @@ export const RecruitmentCreateForm = () => {
 };
 
 export const RecruitmentEditForm = () => {
-  const [images, setImages] = useState<Array<string>>([]);
+  const [images, setImages] = useState<Array<string>>(recruitmentEditData.imageUrl);
   const [currentImage, setCurrentImage] = useState(0);
   const [imagesParagraph, setImagesParagraph] = useState("");
-  const [name, setName] = useState("");
-  const [recruitType, setRecruitType] = useState("crew");
+  const [name, setName] = useState(recruitmentEditData.name);
+  const [recruitType, setRecruitType] = useState(recruitmentEditData.recruitmentType);
   const [content, setContent] = useState("");
-  const [animalType, setAnimalType] = useState("");
-  const [participantAmount, setParticipantAmount] = useState(2);
-  const [recruitMethod, setRecruitMethod] = useState("firstCome");
+  const [animalType, setAnimalType] = useState(recruitmentEditData.animalType);
+  const [participantAmount, setParticipantAmount] = useState(recruitmentEditData.participant);
+  const [recruitMethod, setRecruitMethod] = useState(recruitmentEditData.recruitmentMethod);
 
   const showLeftImage = () => {
     if (currentImage > 0) {
@@ -440,10 +441,10 @@ export const RecruitmentEditForm = () => {
           </div>
         </div>
         <div className="text-editor__container">
-          <QuillEditor setContent={setContent} />
+          <QuillEditor initialValue={recruitmentEditData.content} setContent={setContent} />
         </div>
         <div className="submit__container">
-          <input type="submit" value="공고 생성" />
+          <input type="submit" value="공고 수정" />
         </div>
       </form>
     </div>
