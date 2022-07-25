@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/HelpAnimal-front/static/css/main.17220773.css",
+    "main.js": "/HelpAnimal-front/static/js/main.7c6b28fe.js",
+    "index.html": "/HelpAnimal-front/index.html",
+    "main.17220773.css.map": "/HelpAnimal-front/static/css/main.17220773.css.map",
+    "main.7c6b28fe.js.map": "/HelpAnimal-front/static/js/main.7c6b28fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17220773.css",
+    "static/js/main.7c6b28fe.js"
+  ]
+}
