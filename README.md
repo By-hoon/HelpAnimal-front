@@ -20,6 +20,8 @@ src
 │   ├── DetailBox.tsx
 │   ├── DetailContent.tsx
 │   ├── Header.tsx
+│   ├── InputTitles.tsx
+│   ├── QuillEditor.tsx
 │   ├── RecruitmentCard.tsx
 │   ├── RecruitmentForm.tsx
 │   ├── Recruitments.tsx
@@ -40,6 +42,8 @@ src
 │   │   ├── crewForm.scss
 │   │   ├── detailBox.scss
 │   │   ├── header.scss
+│   │   ├── inputTitles.scss
+│   │   ├── quillEditor.scss
 │   │   ├── recruitmentCard.scss
 │   │   ├── recruitmentForm.scss
 │   │   ├── recruitments.scss
