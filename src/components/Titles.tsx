@@ -45,3 +45,11 @@ export const RecruitmentCreateTitle = () => {
     </div>
   );
 };
+
+export const RecruitmentEditTitle = () => {
+  return (
+    <div className="title__container">
+      <span className="title__span">공고 수정</span>
+    </div>
+  );
+};
