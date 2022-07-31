@@ -7,6 +7,7 @@ import CrewEdit from "./routes/CrewEdit";
 import Home from "./routes/Home";
 import Recruitment from "./routes/Recruitment";
 import RecruitmentCreate from "./routes/RecruitmentCreate";
+import RecruitmentDetail from "./routes/RecruitmentDetail";
 import RecruitmentEdit from "./routes/RecruitmentEdit";
 
 const Router = () => {
@@ -22,6 +23,7 @@ const Router = () => {
         <Route path="/recruit" element={<Recruitment />} />
         <Route path="/recruit/create" element={<RecruitmentCreate />} />
         <Route path="/recruit/edit" element={<RecruitmentEdit />} />
+        <Route path="/recruit/detail" element={<RecruitmentDetail />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
