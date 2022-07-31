@@ -4,21 +4,35 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 const RecruitmentDetailBox = () => {
+  const [images, setImages] = useState<Array<string>>(recruitmentDetailData.imageUrl);
   const [currentImage, setCurrentImage] = useState(0);
+
+  const showLeftImage = () => {
+    if (currentImage > 0) {
+      setCurrentImage(currentImage - 1);
+    } else {
+      setCurrentImage(images.length - 1);
+    }
+  };
+
+  const showRightImage = () => {
+    if (currentImage < images.length - 1) {
+      setCurrentImage(currentImage + 1);
+    } else {
+      setCurrentImage(0);
+    }
+  };
+
   return (
     <>
       <div className="recruitment-detail__container">
         <div className="recruitment-detail-images__container">
-          <img
-            src={recruitmentDetailData.imageUrl[currentImage]}
-            alt="recruitment-images"
-            className="recruitment-detail__image"
-          />
+          <img src={images[currentImage]} alt="recruitment-images" className="recruitment-detail__image" />
           <div className="recruitment-detail-image-buttons__container">
-            <div className="recruitment-detail-image-button__container pointer">
+            <div className="recruitment-detail-image-button__container pointer" onClick={showLeftImage}>
               <Icon icon="ant-design:left-outlined" />
             </div>
-            <div className="recruitment-detail-image-button__container pointer">
+            <div className="recruitment-detail-image-button__container pointer" onClick={showRightImage}>
               <Icon icon="ant-design:right-outlined" />
             </div>
           </div>
