@@ -1,5 +1,93 @@
 .recruitment-detail-box__container {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 50px;
+}
+
+.recruitment-detail__container {
+  width: 732px;
+}
+
+.recruitment-detail-images__container {
+  position: relative;
+  width: 100%;
+  height: 549px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.recruitment-detail__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.recruitment-detail__image--background {
+  @extend .recruitment__image--background;
+}
+
+.recruitment-detail-image-buttons__container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  svg {
+    font-size: 20px;
+    color: $G-main-brown-darken-more;
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.recruitment-detail-header__container {
+  margin-top: 30px;
+}
+
+.recruitment-detail-title__container {
+  margin: 5px 0;
+}
+
+.recruitment-detail-name__p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.recruitment-detail-subs__container {
+  margin: 8px 0 30px 0;
+  span {
+    margin-right: 7px;
+  }
+}
+
+.recruitment-detail-author__span {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.recruitment-detail-type__span {
+  font-size: 14px;
+  color: $G-main-brown-darken;
+}
+
+.recruitment-detail-option__span {
+  font-size: 14px;
+  color: #8395a7;
+}
+
+.recruitment-detail-animal__container {
+  margin-bottom: 50px;
+}
+
+.recruitment-detail-animal__span {
+  font-size: 17px;
+  padding: 5px;
+  background-color: $G-cloudy;
+  border-radius: 5px;
 }
