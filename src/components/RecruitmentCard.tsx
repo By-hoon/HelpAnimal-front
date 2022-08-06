@@ -13,9 +13,9 @@ const RecruitmentCard = ({ recruitment, setLastRecruitment }: RecruitmentCardPro
       <Link to={`/recruit/detail`} state={{ recruitmentId: recruitment.id }} ref={setLastRecruitment}>
         <div className="recruitment__container">
           <div className="recruitment-image__container">
-            <img src={recruitment.imageUrl} alt="recruitment-main" className="recruitment__image" />
+            <img src={recruitment.imageUrl[0]} alt="recruitment-main" className="recruitment__image" />
             <img
-              src={recruitment.imageUrl}
+              src={recruitment.imageUrl[0]}
               alt="recruitment-main"
               className="recruitment__image--background"
             />

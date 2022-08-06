@@ -1,0 +1,22 @@
+.floating-menu__container {
+  position: sticky;
+  top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 340px;
+  height: 330px;
+  padding: 24px 20px;
+  border: 1px $G-cloudy solid;
+}
+
+.floating-menu__button {
+  cursor: pointer;
+  width: 290px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 1px $G-main-brown-darken solid;
+  color: white;
+  background-color: $G-main-brown-darken;
+}
