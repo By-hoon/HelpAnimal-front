@@ -19,10 +19,12 @@ src
 │   ├── Crews.tsx
 │   ├── DetailBox.tsx
 │   ├── DetailContent.tsx
+│   ├── FloatingMenu.tsx
 │   ├── Header.tsx
 │   ├── InputTitles.tsx
 │   ├── QuillEditor.tsx
 │   ├── RecruitmentCard.tsx
+│   ├── RecruitmentDetailBox.tsx
 │   ├── RecruitmentForm.tsx
 │   ├── Recruitments.tsx
 │   └── Title.tsx
@@ -34,6 +36,8 @@ src
 │   ├── Home.tsx
 │   ├── Recruitment.tsx
 │   └── RecruitmentCreate.tsx
+│   └── RecruitmentDetail.tsx
+│   └── RecruitmentEdit.tsx
 ├── shared
 │   ├── Props.tsx
 ├── styles
@@ -41,10 +45,12 @@ src
 │   │   ├── crewCard.scss
 │   │   ├── crewForm.scss
 │   │   ├── detailBox.scss
+│   │   ├── floatingMenu.scss
 │   │   ├── header.scss
 │   │   ├── inputTitles.scss
 │   │   ├── quillEditor.scss
 │   │   ├── recruitmentCard.scss
+│   │   ├── recruitmentDetailBox.scss
 │   │   ├── recruitmentForm.scss
 │   │   ├── recruitments.scss
 │   │   └── title.scss
@@ -122,4 +128,5 @@ src
 | 9        | 공고 페이지                            | 공고 목록 조회, 생성 페이지 이동        | 공고 목록 조회                     | /recruit        |
 | 10       | 공고 생성 페이지                       | 공고 생성 페이지                        | 공고 생성                          | /recruit/create |
 | 11       | 공고 수정 페이지                       | 공고 수정 페이지                        | 공고 수정                          | /recruit/edit   |
+| 12       | 공고 상세 페이지                       | 공고 상세 페이지                        | 공고 상세                          | /recruit/detail |
 |          |                                        |                                         |                                    |                 |
