@@ -1,4 +1,10 @@
-import { NodeArray } from "typescript";
+export interface UserProps {
+  id: string;
+  name: string;
+  nickname: string;
+  email: string;
+  profileImage: string;
+}
 
 export interface CrewProps {
   id: string;
