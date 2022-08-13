@@ -20,27 +20,36 @@ const LoginBox = () => {
     <>
       <div className="login-box__container">
         <form onSubmit={onSubmitHandler}>
-          <input
-            type="email"
-            value={email}
-            placeholder="이메일 아이디"
-            onChange={onEmailHandler}
-            className="login-email__input"
-          />
-          <input
-            type="password"
-            value={password}
-            placeholder="비밀번호"
-            onChange={onPasswordHandler}
-            className="login-password__input"
-          />
-          <button type="submit" className="login__button">
-            로그인
-          </button>
+          <div className="login-input__container">
+            <input
+              type="email"
+              value={email}
+              placeholder="이메일 아이디"
+              onChange={onEmailHandler}
+              className="login-email__input"
+            />
+          </div>
+          <div className="login-input__container">
+            <input
+              type="password"
+              value={password}
+              placeholder="비밀번호"
+              onChange={onPasswordHandler}
+              className="login-password__input"
+            />
+          </div>
+
+          <div className="login-button__container">
+            <button type="submit" className="login__button">
+              로그인
+            </button>
+          </div>
         </form>
         <div className="login-option__container">
-          <span>아이디 찾기</span>
-          <span>비밀번호 찾기</span>
+          <div>
+            <span>아이디 찾기</span>
+            <span>비밀번호 찾기</span>
+          </div>
           <span>회원가입</span>
         </div>
       </div>
