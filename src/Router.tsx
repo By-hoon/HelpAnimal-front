@@ -5,6 +5,7 @@ import CrewCreate from "./routes/CrewCreate";
 import CrewDetail from "./routes/CrewDetail";
 import CrewEdit from "./routes/CrewEdit";
 import Home from "./routes/Home";
+import Login from "./routes/Login";
 import Recruitment from "./routes/Recruitment";
 import RecruitmentCreate from "./routes/RecruitmentCreate";
 import RecruitmentDetail from "./routes/RecruitmentDetail";
@@ -16,6 +17,7 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/crew" element={<Crew />} />
         <Route path="/crew/create" element={<CrewCreate />} />
         <Route path="/crew/edit" element={<CrewEdit />}></Route>
