@@ -22,6 +22,7 @@ src
 │   ├── FloatingMenu.tsx
 │   ├── Header.tsx
 │   ├── InputTitles.tsx
+│   ├── LoginBox.tsx
 │   ├── QuillEditor.tsx
 │   ├── RecruitmentCard.tsx
 │   ├── RecruitmentDetailBox.tsx
@@ -34,12 +35,15 @@ src
 │   ├── CrewDetail.tsx
 │   ├── CrewEdit.tsx
 │   ├── Home.tsx
+│   ├── Login.tsx
 │   ├── Recruitment.tsx
 │   └── RecruitmentCreate.tsx
 │   └── RecruitmentDetail.tsx
 │   └── RecruitmentEdit.tsx
 ├── shared
 │   ├── Props.tsx
+├── Slices
+│   ├── user.ts
 ├── styles
 │   ├── components
 │   │   ├── crewCard.scss
@@ -48,6 +52,7 @@ src
 │   │   ├── floatingMenu.scss
 │   │   ├── header.scss
 │   │   ├── inputTitles.scss
+│   │   ├── loginBox.scss
 │   │   ├── quillEditor.scss
 │   │   ├── recruitmentCard.scss
 │   │   ├── recruitmentDetailBox.scss
@@ -68,7 +73,9 @@ src
 ├── App.tsx
 ├── index.tsx
 ├── react-app-env.d.ts
-└── Router.tsx
+├── rootReducer.ts
+├── Router.tsx
+└── store.ts
 ```
 
 <br>
