@@ -382,41 +382,6 @@ export const RecruitmentEditForm = () => {
             className="name__input"
           />
         </div>
-        <InputTitles title={"공고 유형"} />
-        <div className="recruit-type__container">
-          <div>
-            <input
-              type="radio"
-              name="recruit-type"
-              value="crew"
-              id="crew"
-              checked={recruitType === "crew"}
-              onChange={onChangeRecruitType}
-            />
-            <label htmlFor="crew">크루</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              name="recruit-type"
-              value="personal"
-              id="personal"
-              checked={recruitType === "personal"}
-              onChange={onChangeRecruitType}
-            />
-            <label htmlFor="personal">개인</label>
-          </div>
-        </div>
-        <InputTitles title={"동물 종류"} />
-        <div className="animal-type__container">
-          <input
-            value={animalType}
-            onChange={onAnimalTypeChange}
-            type="text"
-            placeholder="동물 종류"
-            className="animal-type__input"
-          />
-        </div>
         <InputTitles title={"모집 인원"} />
         <div className="participant-amount__container">
           <input
@@ -428,31 +393,6 @@ export const RecruitmentEditForm = () => {
             min="2"
             max="399"
           />
-        </div>
-        <InputTitles title={"선발 방식"} />
-        <div className="recruit-method__container">
-          <div>
-            <input
-              type="radio"
-              name="recruit-method"
-              value="firstCome"
-              id="firstCome"
-              checked={recruitMethod === "firstCome"}
-              onChange={onChangeRecruitMethod}
-            />
-            <label htmlFor="firstCome">선착순</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              name="recruit-method"
-              value="choice"
-              id="choice"
-              checked={recruitMethod === "choice"}
-              onChange={onChangeRecruitMethod}
-            />
-            <label htmlFor="choice">추첨</label>
-          </div>
         </div>
         <InputTitles title={"공고 내용"} />
         <div className="text-editor__container">
