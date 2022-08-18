@@ -240,11 +240,8 @@ export const RecruitmentEditForm = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [imagesParagraph, setImagesParagraph] = useState("");
   const [name, setName] = useState(recruitmentEditData.name);
-  const [recruitType, setRecruitType] = useState(recruitmentEditData.recruitmentType);
   const [content, setContent] = useState("");
-  const [animalType, setAnimalType] = useState(recruitmentEditData.animalType);
   const [participantAmount, setParticipantAmount] = useState(recruitmentEditData.participant);
-  const [recruitMethod, setRecruitMethod] = useState(recruitmentEditData.recruitmentMethod);
 
   const showLeftImage = () => {
     if (currentImage > 0) {
@@ -280,20 +277,8 @@ export const RecruitmentEditForm = () => {
     setName(e.target.value);
   }, []);
 
-  const onAnimalTypeChange = useCallback((e) => {
-    setAnimalType(e.target.value);
-  }, []);
-
   const onParticipantAmount = useCallback((e) => {
     setParticipantAmount(e.target.value);
-  }, []);
-
-  const onChangeRecruitType = useCallback((e) => {
-    setRecruitType(e.target.value);
-  }, []);
-
-  const onChangeRecruitMethod = useCallback((e) => {
-    setRecruitMethod(e.target.value);
   }, []);
 
   const onSubmit = (e: any) => {
