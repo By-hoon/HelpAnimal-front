@@ -640,3 +640,20 @@ export const recruitmentDetailData = {
   ],
   recruitmentMethod: "firstcome",
 };
+
+export const animalTypeData = [
+  "Dog1",
+  "Dog2",
+  "Dog3",
+  "Dog4",
+  "Dog5",
+  "Dog6",
+  "Dog7",
+  "Dog8",
+  "Dog9",
+  "Dog10",
+  "Dog11",
+  "Dog12",
+  "Dog13",
+  "Dog14",
+];

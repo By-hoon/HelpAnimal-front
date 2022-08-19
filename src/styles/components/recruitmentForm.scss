@@ -64,8 +64,31 @@
   justify-content: space-between;
 }
 
+.animal-type__container {
+  width: 67%;
+  display: flex;
+  margin: 0 auto;
+  padding: 15px;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $G-cloudy;
+  }
+}
+
 .animal-type__input {
-  @extend .name__input;
+  cursor: pointer;
+  font-size: 17px;
+  margin: 7px;
+  padding: 5px;
+  border: 2px solid $G-cloudy;
+  border-radius: 5px;
+  &:hover {
+    color: white;
+    background-color: $G-cloudy;
+  }
 }
 
 .participant-amount__input {

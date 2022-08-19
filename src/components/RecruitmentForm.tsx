@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import QuillEditor from "./QuillEditor";
 import InputTitles from "./InputTitles";
-import { recruitmentEditData } from "../test/data";
+import { animalTypeData, recruitmentEditData } from "../test/data";
 
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
@@ -178,13 +178,9 @@ export const RecruitmentCreateForm = () => {
         </div>
         <InputTitles title={"동물 종류"} />
         <div className="animal-type__container">
-          <input
-            value={animalType}
-            onChange={onAnimalTypeChange}
-            type="text"
-            placeholder="동물 종류"
-            className="animal-type__input"
-          />
+          {animalTypeData.map((animal) => (
+            <span className="animal-type__input">{animal}</span>
+          ))}
         </div>
         <InputTitles title={"모집 인원"} />
         <div className="participant-amount__container">
