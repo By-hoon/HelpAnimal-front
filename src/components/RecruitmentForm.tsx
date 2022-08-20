@@ -11,7 +11,7 @@ export const RecruitmentCreateForm = () => {
   const [name, setName] = useState("");
   const [recruitType, setRecruitType] = useState("crew");
   const [content, setContent] = useState("");
-  const [animalType, setAnimalType] = useState("");
+  const [animalTypes, setAnimalTypes] = useState<Array<string>>([]);
   const [participantAmount, setParticipantAmount] = useState(2);
   const [recruitMethod, setRecruitMethod] = useState("firstCome");
 
@@ -49,9 +49,15 @@ export const RecruitmentCreateForm = () => {
     setName(e.target.value);
   }, []);
 
-  const onAnimalTypeChange = useCallback((e) => {
-    setAnimalType(e.target.value);
-  }, []);
+  const onSelectAnimalType = (e: any, animal: string) => {
+    setAnimalTypes(animalTypes.concat([animal]));
+  };
+
+  const animalTypeCancel = (index: number) => {
+    const newAnimalTypes = animalTypes.slice();
+    newAnimalTypes.splice(index, 1);
+    setAnimalTypes(newAnimalTypes);
+  };
 
   const onParticipantAmount = useCallback((e) => {
     setParticipantAmount(e.target.value);
@@ -178,9 +184,25 @@ export const RecruitmentCreateForm = () => {
         </div>
         <InputTitles title={"동물 종류"} />
         <div className="animal-type__container">
-          {animalTypeData.map((animal) => (
-            <span className="animal-type__input">{animal}</span>
-          ))}
+          <div className="seleted-animal-type__container">
+            {animalTypes.map((animalType, index) => (
+              <div key={animalType}>
+                <span className="animal-type__span--selected pointer">{animalType}</span>
+                <Icon icon="iconoir:cancel" onClick={() => animalTypeCancel(index)} />
+              </div>
+            ))}
+          </div>
+          <div className="animal-type-list__container">
+            {animalTypeData.map((animal) => (
+              <span
+                key={animal}
+                className="animal-type__input pointer"
+                onClick={() => onSelectAnimalType(e, animal)}
+              >
+                {animal}
+              </span>
+            ))}
+          </div>
         </div>
         <InputTitles title={"모집 인원"} />
         <div className="participant-amount__container">
@@ -386,3 +408,6 @@ export const RecruitmentEditForm = () => {
     </div>
   );
 };
+function e(e: any, animal: string): void {
+  throw new Error("Function not implemented.");
+}
