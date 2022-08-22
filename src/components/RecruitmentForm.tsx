@@ -50,7 +50,14 @@ export const RecruitmentCreateForm = () => {
   }, []);
 
   const onSelectAnimalType = (e: any, animal: string) => {
-    setAnimalTypes(animalTypes.concat([animal]));
+    const index = animalTypes.findIndex((element) => element === animal);
+    if (index !== -1) {
+      const newAnimalTypes = animalTypes.slice();
+      newAnimalTypes.splice(index, 1);
+      setAnimalTypes(newAnimalTypes);
+    } else {
+      setAnimalTypes(animalTypes.concat([animal]));
+    }
   };
 
   const animalTypeCancel = (index: number) => {
@@ -184,7 +191,7 @@ export const RecruitmentCreateForm = () => {
         </div>
         <InputTitles title={"동물 종류"} />
         <div className="animal-type__container">
-          <div className="seleted-animal-type__container">
+          <div className="selected-animal-type__container">
             {animalTypes.map((animalType, index) => (
               <div key={animalType}>
                 <span className="animal-type__span--selected pointer">{animalType}</span>
