@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import QuillEditor from "./QuillEditor";
 import InputTitles from "./InputTitles";
-import { recruitmentEditData } from "../test/data";
+import { animalTypeData, recruitmentEditData } from "../test/data";
 
 export const RecruitmentCreateForm = () => {
   const [images, setImages] = useState<Array<string>>([]);
@@ -11,7 +11,7 @@ export const RecruitmentCreateForm = () => {
   const [name, setName] = useState("");
   const [recruitType, setRecruitType] = useState("crew");
   const [content, setContent] = useState("");
-  const [animalType, setAnimalType] = useState("");
+  const [animalTypes, setAnimalTypes] = useState<Array<string>>([]);
   const [participantAmount, setParticipantAmount] = useState(2);
   const [recruitMethod, setRecruitMethod] = useState("firstCome");
 
@@ -49,9 +49,22 @@ export const RecruitmentCreateForm = () => {
     setName(e.target.value);
   }, []);
 
-  const onAnimalTypeChange = useCallback((e) => {
-    setAnimalType(e.target.value);
-  }, []);
+  const onSelectAnimalType = (e: any, animal: string) => {
+    const index = animalTypes.findIndex((element) => element === animal);
+    if (index !== -1) {
+      const newAnimalTypes = animalTypes.slice();
+      newAnimalTypes.splice(index, 1);
+      setAnimalTypes(newAnimalTypes);
+    } else {
+      setAnimalTypes(animalTypes.concat([animal]));
+    }
+  };
+
+  const animalTypeCancel = (index: number) => {
+    const newAnimalTypes = animalTypes.slice();
+    newAnimalTypes.splice(index, 1);
+    setAnimalTypes(newAnimalTypes);
+  };
 
   const onParticipantAmount = useCallback((e) => {
     setParticipantAmount(e.target.value);
@@ -178,13 +191,25 @@ export const RecruitmentCreateForm = () => {
         </div>
         <InputTitles title={"동물 종류"} />
         <div className="animal-type__container">
-          <input
-            value={animalType}
-            onChange={onAnimalTypeChange}
-            type="text"
-            placeholder="동물 종류"
-            className="animal-type__input"
-          />
+          <div className="selected-animal-type__container">
+            {animalTypes.map((animalType, index) => (
+              <div key={animalType}>
+                <span className="animal-type__span--selected pointer">{animalType}</span>
+                <Icon icon="iconoir:cancel" onClick={() => animalTypeCancel(index)} />
+              </div>
+            ))}
+          </div>
+          <div className="animal-type-list__container">
+            {animalTypeData.map((animal) => (
+              <span
+                key={animal}
+                className="animal-type__input pointer"
+                onClick={() => onSelectAnimalType(e, animal)}
+              >
+                {animal}
+              </span>
+            ))}
+          </div>
         </div>
         <InputTitles title={"모집 인원"} />
         <div className="participant-amount__container">
@@ -240,11 +265,8 @@ export const RecruitmentEditForm = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [imagesParagraph, setImagesParagraph] = useState("");
   const [name, setName] = useState(recruitmentEditData.name);
-  const [recruitType, setRecruitType] = useState(recruitmentEditData.recruitmentType);
   const [content, setContent] = useState("");
-  const [animalType, setAnimalType] = useState(recruitmentEditData.animalType);
   const [participantAmount, setParticipantAmount] = useState(recruitmentEditData.participant);
-  const [recruitMethod, setRecruitMethod] = useState(recruitmentEditData.recruitmentMethod);
 
   const showLeftImage = () => {
     if (currentImage > 0) {
@@ -280,20 +302,8 @@ export const RecruitmentEditForm = () => {
     setName(e.target.value);
   }, []);
 
-  const onAnimalTypeChange = useCallback((e) => {
-    setAnimalType(e.target.value);
-  }, []);
-
   const onParticipantAmount = useCallback((e) => {
     setParticipantAmount(e.target.value);
-  }, []);
-
-  const onChangeRecruitType = useCallback((e) => {
-    setRecruitType(e.target.value);
-  }, []);
-
-  const onChangeRecruitMethod = useCallback((e) => {
-    setRecruitMethod(e.target.value);
   }, []);
 
   const onSubmit = (e: any) => {
@@ -382,41 +392,6 @@ export const RecruitmentEditForm = () => {
             className="name__input"
           />
         </div>
-        <InputTitles title={"공고 유형"} />
-        <div className="recruit-type__container">
-          <div>
-            <input
-              type="radio"
-              name="recruit-type"
-              value="crew"
-              id="crew"
-              checked={recruitType === "crew"}
-              onChange={onChangeRecruitType}
-            />
-            <label htmlFor="crew">크루</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              name="recruit-type"
-              value="personal"
-              id="personal"
-              checked={recruitType === "personal"}
-              onChange={onChangeRecruitType}
-            />
-            <label htmlFor="personal">개인</label>
-          </div>
-        </div>
-        <InputTitles title={"동물 종류"} />
-        <div className="animal-type__container">
-          <input
-            value={animalType}
-            onChange={onAnimalTypeChange}
-            type="text"
-            placeholder="동물 종류"
-            className="animal-type__input"
-          />
-        </div>
         <InputTitles title={"모집 인원"} />
         <div className="participant-amount__container">
           <input
@@ -429,31 +404,6 @@ export const RecruitmentEditForm = () => {
             max="399"
           />
         </div>
-        <InputTitles title={"선발 방식"} />
-        <div className="recruit-method__container">
-          <div>
-            <input
-              type="radio"
-              name="recruit-method"
-              value="firstCome"
-              id="firstCome"
-              checked={recruitMethod === "firstCome"}
-              onChange={onChangeRecruitMethod}
-            />
-            <label htmlFor="firstCome">선착순</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              name="recruit-method"
-              value="choice"
-              id="choice"
-              checked={recruitMethod === "choice"}
-              onChange={onChangeRecruitMethod}
-            />
-            <label htmlFor="choice">추첨</label>
-          </div>
-        </div>
         <InputTitles title={"공고 내용"} />
         <div className="text-editor__container">
           <QuillEditor initialValue={recruitmentEditData.content} setContent={setContent} />
@@ -465,3 +415,6 @@ export const RecruitmentEditForm = () => {
     </div>
   );
 };
+function e(e: any, animal: string): void {
+  throw new Error("Function not implemented.");
+}
