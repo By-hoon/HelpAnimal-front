@@ -66,7 +66,7 @@ export const CrewDetailBox = () => {
           </div>
         </div>
         <div className="detail-content__container">
-          <CrewDetailContent menu={menu} crewIntroduction={crewDetail.introduction} />
+          <CrewDetailContent menu={menu} introduction={crewDetail.introduction} />
         </div>
       </div>
     </div>
