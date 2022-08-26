@@ -4,6 +4,10 @@ export interface UserProps {
   nickname: string;
   email: string;
   profileImage: string;
+  introduction: string;
+  createDate: number;
+  crewIds: Array<string>;
+  recruitmentIds: Array<string>;
 }
 
 export interface CrewProps {
