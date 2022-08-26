@@ -3,6 +3,11 @@ interface CrewDetailContentProps {
   introduction: string;
 }
 
+interface UserDetailContentProps {
+  menu: string;
+  introduction: string;
+}
+
 export const CrewDetailContent = ({ menu, introduction }: CrewDetailContentProps) => {
   const Render = () => {
     switch (menu) {
@@ -21,7 +26,7 @@ export const CrewDetailContent = ({ menu, introduction }: CrewDetailContentProps
   return Render();
 };
 
-export const UserDetailContent = ({ menu, introduction }: CrewDetailContentProps) => {
+export const UserDetailContent = ({ menu, introduction }: UserDetailContentProps) => {
   const Render = () => {
     switch (menu) {
       case "introduction": {
