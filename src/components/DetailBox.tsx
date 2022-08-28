@@ -104,7 +104,16 @@ export const UserDetailBox = () => {
       <div className="detail-info__container--image">
         <img src={userDetail.profileImage} alt="detail" className="detail-info__image" />
       </div>
-      <div className="detail-info__container--basic"></div>
+      <div className="detail-info__container--basic">
+        <div>
+          <span className="detail-info__span--main">{userDetail.nickname}</span>
+        </div>
+        <div>
+          {userDetail.crewIds.map((crewId) => (
+            <span className="detail-info__span--flexible">{crewId}</span>
+          ))}
+        </div>
+      </div>
       <div className="detail-info__container--deep">
         <div className="detail-menu__container">
           <div>
