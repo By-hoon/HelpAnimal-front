@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { CrewDetailProps, UserProps } from "../shared/Props";
-import { crewDetailData, UserDetailData } from "../test/data";
+import { CrewDetailProps, CrewProps, UserProps } from "../shared/Props";
+import { crewDetailData, CrewsData, UserDetailData } from "../test/data";
 import { CrewDetailContent, UserDetailContent } from "./DetailContent";
 
 interface CrewDetailBoxProps {
@@ -80,12 +80,26 @@ export const CrewDetailBox = () => {
 export const UserDetailBox = () => {
   const { userId } = useLocation().state as UserDetailBoxProps;
 
-  const [userDetail, setUserDetail] = useState<UserProps>(UserDetailData);
+  const [userDetail, setUserDetail] = useState<UserProps>({
+    id: "",
+    email: "",
+    name: "",
+    nickname: "",
+    introduction: "",
+    profileImage: "",
+    createDate: 0,
+    crewIds: [],
+    recruitmentIds: [],
+  });
+  const [userCrews, setUserCrews] = useState([]);
   const [menu, setMenu] = useState("introduction");
 
   useEffect(() => {
     //userId를 활용한 api 호출
-    //setUserDetail();
+    setUserDetail(UserDetailData);
+    UserDetailData.crewIds.forEach((crewId) => {
+      //setUserCrews
+    });
   }, [userId]);
 
   const setMenuIntroduction = () => {
@@ -110,7 +124,9 @@ export const UserDetailBox = () => {
         </div>
         <div>
           {userDetail.crewIds.map((crewId) => (
-            <span className="detail-info__span--flexible">{crewId}</span>
+            <span key={crewId} className="detail-info__span--flexible">
+              {crewId}
+            </span>
           ))}
         </div>
       </div>
