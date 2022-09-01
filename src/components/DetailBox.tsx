@@ -88,18 +88,20 @@ export const UserDetailBox = () => {
     introduction: "",
     profileImage: "",
     createDate: 0,
-    crewIds: [],
-    recruitmentIds: [],
   });
   const [userCrews, setUserCrews] = useState([]);
+  const [userRecruitments, setUserRecruitments] = useState([]);
   const [menu, setMenu] = useState("introduction");
 
   useEffect(() => {
     //userId를 활용한 api 호출
     setUserDetail(UserDetailData);
-    UserDetailData.crewIds.forEach((crewId) => {
-      //setUserCrews
-    });
+  }, [userId]);
+
+  useEffect(() => {
+    //userId로 크루, 공고 정보 호출
+    //setUserCrews()
+    //setUserRecruitments()
   }, [userId]);
 
   const setMenuIntroduction = () => {
@@ -123,9 +125,9 @@ export const UserDetailBox = () => {
           <span className="detail-info__span--main">{userDetail.nickname}</span>
         </div>
         <div>
-          {userDetail.crewIds.map((crewId) => (
-            <span key={crewId} className="detail-info__span--flexible">
-              {crewId}
+          {userCrews.map((crew) => (
+            <span key={crew} className="detail-info__span--flexible">
+              {crew}
             </span>
           ))}
         </div>
