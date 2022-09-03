@@ -6,6 +6,7 @@ import CrewDetail from "./routes/CrewDetail";
 import CrewEdit from "./routes/CrewEdit";
 import Home from "./routes/Home";
 import Login from "./routes/Login";
+import Mypage from "./routes/Mypage";
 import Recruitment from "./routes/Recruitment";
 import RecruitmentCreate from "./routes/RecruitmentCreate";
 import RecruitmentDetail from "./routes/RecruitmentDetail";
@@ -26,6 +27,7 @@ const Router = () => {
         <Route path="/recruit/create" element={<RecruitmentCreate />} />
         <Route path="/recruit/edit" element={<RecruitmentEdit />} />
         <Route path="/recruit/detail" element={<RecruitmentDetail />} />
+        <Route path="/my" element={<Mypage />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
