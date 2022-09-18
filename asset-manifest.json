@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/HelpAnimal-front/static/css/main.739f8fa1.css",
-    "main.js": "/HelpAnimal-front/static/js/main.d541bb1b.js",
+    "main.js": "/HelpAnimal-front/static/js/main.be91ae85.js",
     "index.html": "/HelpAnimal-front/index.html",
     "main.739f8fa1.css.map": "/HelpAnimal-front/static/css/main.739f8fa1.css.map",
-    "main.d541bb1b.js.map": "/HelpAnimal-front/static/js/main.d541bb1b.js.map"
+    "main.be91ae85.js.map": "/HelpAnimal-front/static/js/main.be91ae85.js.map"
   },
   "entrypoints": [
     "static/css/main.739f8fa1.css",
-    "static/js/main.d541bb1b.js"
+    "static/js/main.be91ae85.js"
   ]
 }
